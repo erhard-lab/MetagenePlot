@@ -2,7 +2,10 @@
 A tool to plot metagene plots as well as metagene heatmaps for the gedi toolkit
 
 # Quick guide
-To run `MetagenePlot` download the latest release and execute the following console command (with appropriate parameters): `java -cp MetagenePlot.jar -prefix <Prefix> -binSizes <binSizes> -binNames <binNames> -readData <reads>.cit -locFile <locafile>.tsv <Options>`
+To run `MetagenePlot` download the latest release and execute the following console command (with appropriate parameters): 
+```
+java -cp MetagenePlot.jar -prefix <Prefix> -binSizes <binSizes> -binNames <binNames> -readData <reads>.cit -locFile <locafile>.tsv <Options>
+```
 
 An example call could look like this:
 ```
