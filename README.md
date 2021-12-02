@@ -16,7 +16,7 @@ The following options are available:
 ```
 General:
  -prefix <prefix>                   The prefix used for all output files
- -binSizes <binSizes>               The sizes of each bin comma separated (e.g.: 40,60,20 this creates three bins with a total of 120 bins)
+ -binSizes <binSizes>               The sizes of each bin comma separated (e.g.: 40,60,20 this creates three bins with a total of 3 bins)
  -binNames <binNames>               Comma separated string containing names for the bins. Need to be the same size (i.e. same amounts of commas as binSizes)
 
 MetageneDataExtractor:
@@ -39,3 +39,7 @@ MetagenePlotter:
 ```
 
 # Locations file (important!)
+The locations-file provided by `-locFile` should be a text-file, where each row represents a location of interest and contains a number of genomic locations equal to the number of bins separated by tab stops.
+
+A genomic location should look like this: `<Chromosome><Strand>:<start>-<end>`. An example for the location 1000 to 2000 on the plus strand of the chromosome 21 looks like the following: `21+:1000-2000`. However, the same location on the negative strand of chromosome 21 looks like this: `21-:2000-1000`, where the start and end points are reversed compared to the plus strand location. MetagenePlot always orients the 5'- and 3'-ends based on the start to end direction in the location string. This makes it possible, for example, to show the upstream antisense window in the first bin and the downstream sense window in the second bin. An example for this case would be the following line in the `locFile`: `21-:1000-2000 21+:2000-3000`. Here the second bin show the location 2000 to 3000 on the plus strand in 5' to 3' direction. However, the first bin will show the location 1000 to 2000 on the minus strand from 3' to 5'.
+ 
